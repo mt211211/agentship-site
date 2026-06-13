@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgentShip — The AI-native SaaS Boilerplate for Next.js</title>
-<meta name="description" content="Ship a production SaaS with Claude-powered AI features in a weekend. Streaming chat, typed tool handlers, usage metering, Stripe billing, auth. Next.js 15 + TypeScript.">
+<meta name="description" content="Ship a production AI SaaS in a weekend. Auth.js v5, Stripe subscriptions, Claude streaming AI, Drizzle Postgres, MCP server scaffold. Next.js + TypeScript.">
 <meta property="og:title" content="AgentShip — The AI-native SaaS Boilerplate">
-<meta property="og:description" content="Ship a production AI SaaS in a weekend, not a quarter. £49 early access.">
+<meta property="og:description" content="Everything to ship an AI-native SaaS in a weekend. £99 one-time.">
 <meta property="og:type" content="website">
 <style>
   :root{--bg:#0a0e14;--panel:#11161f;--border:#1f2733;--text:#dbe2ec;--muted:#8b97a8;--accent:#5eead4;--accent2:#818cf8;}
@@ -27,7 +27,6 @@
   h1 em{font-style:normal;color:var(--accent)}
   .sub{max-width:640px;margin:22px auto 34px;color:var(--muted);font-size:19px}
   .price-note{margin-top:14px;color:var(--muted);font-size:14px}
-  .price-note s{opacity:.7}
   section{padding:56px 0;border-top:1px solid var(--border)}
   h2{font-size:30px;font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
   .lead{color:var(--muted);margin-bottom:32px;max-width:620px}
@@ -40,11 +39,9 @@
   .kw{color:#c792ea}.str{color:#9ece6a}.fn{color:#82aaff}.cm{color:#566073}
   .pricing-box{background:var(--panel);border:1px solid var(--accent);border-radius:16px;padding:40px;max-width:460px;margin:0 auto;text-align:center}
   .pricing-box .amount{font-size:52px;font-weight:800}
-  .pricing-box .amount s{font-size:24px;color:var(--muted);font-weight:400;margin-right:10px}
   .pricing-box ul{list-style:none;text-align:left;margin:24px 0 28px}
   .pricing-box li{padding:7px 0;color:var(--muted)}
   .pricing-box li::before{content:"✓";color:var(--accent);font-weight:700;margin-right:10px}
-  .roadmap li::before{content:"→";color:var(--accent2)}
   details{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:10px}
   summary{cursor:pointer;font-weight:600}
   details p{margin-top:10px;color:var(--muted)}
@@ -55,27 +52,31 @@
 <header>
   <div class="wrap">
     <div class="logo">Agent<span>Ship</span></div>
-    <a class="btn small" href="https://buy.stripe.com/7sYcMYf6me2X3VnaK2f3a0c">Get early access — £49</a>
+    <a class="btn small" href="https://buy.stripe.com/5kQ28k2jA0c7eA1bO6f3a0d">Buy now — £99</a>
   </div>
 </header>
 
 <div class="hero wrap">
-  <div class="badge">EARLY ACCESS — price rises to £99 at v1.0</div>
+  <div class="badge">v1.0 — production-ready</div>
   <h1>Ship an <em>AI-native</em> SaaS<br>in a weekend, not a quarter</h1>
-  <p class="sub">AgentShip is a production-grade Next.js 15 boilerplate with the AI plumbing already done: streaming Claude chat, typed tool handlers, prompt caching, and per-user usage metering — plus the SaaS essentials around it.</p>
-  <a class="btn" href="https://buy.stripe.com/7sYcMYf6me2X3VnaK2f3a0c">Get early access — £49</a>
-  <p class="price-note"><s>£99</s> £49 one-time · lifetime updates · delivered as private GitHub repo access</p>
+  <p class="sub">AgentShip is a complete Next.js boilerplate with auth, billing, streaming Claude AI, Postgres, and an MCP server — all wired up and tested. Clone, configure, deploy.</p>
+  <a class="btn" href="https://buy.stripe.com/5kQ28k2jA0c7eA1bO6f3a0d">Buy AgentShip — £99</a>
+  <p class="price-note">One-time payment · lifetime updates · private GitHub repo access</p>
 </div>
 
 <section>
   <div class="wrap">
-    <h2>The AI layer is the hard part. It's done.</h2>
-    <p class="lead">Every SaaS in 2026 needs AI features. Wiring them up properly — streaming, tool use, token metering so users can't bankrupt you — takes weeks. AgentShip ships it as clean, typed TypeScript you actually want to build on.</p>
+    <h2>Everything in the repo today</h2>
+    <p class="lead">No placeholder modules. Every item below is production-quality TypeScript you can clone and run.</p>
     <div class="grid">
-      <div class="card"><h3><span class="tick">✓</span>Streaming AI chat</h3><p>Server-sent events route on the Claude API with adaptive thinking — current models, current best practices, no deprecated patterns.</p></div>
-      <div class="card"><h3><span class="tick">✓</span>Typed tool handlers</h3><p>Define tools once with Zod schemas. The SDK tool runner executes them and loops automatically — add a capability in ~10 lines.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>Auth.js v5</h3><p>GitHub + Google OAuth with DrizzleAdapter. Session middleware, sign-in page, server-action sign-in flow. Zero boilerplate in routes.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>Stripe subscriptions</h3><p>Checkout session, billing portal, and a webhook handler for subscription created/updated/deleted. Plan IDs map to per-user AI quotas automatically.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>Streaming AI chat</h3><p>Server-sent events route on the Claude API with adaptive thinking. Typed Zod tool handlers. Add a capability in ~10 lines.</p></div>
       <div class="card"><h3><span class="tick">✓</span>Usage metering</h3><p>Track every user's token spend, weight input vs output cost, gate by plan quota. The unglamorous code that protects your margin.</p></div>
-      <div class="card"><h3><span class="tick">✓</span>Prompt caching</h3><p>Structured so your system prompt actually caches — up to 90% off input costs, with the silent cache-invalidators designed out.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>Drizzle + Neon Postgres</h3><p>Type-safe schema for users, accounts, sessions, subscriptions, and usage. One command to migrate. No ORMs you'll regret.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>MCP server scaffold</h3><p>Your SaaS exposed as an MCP server at <code>/api/mcp</code>. AI agents connect to it directly. Add tools in one file.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>Dashboard + chat UI</h3><p>Plan badge, usage meter, billing portal link, and a streaming chat interface — clean Tailwind v4 components ready to customise.</p></div>
+      <div class="card"><h3><span class="tick">✓</span>Resend email templates</h3><p>Welcome and upgrade confirmation emails with HTML templates. Triggered automatically from the auth and webhook flows.</p></div>
     </div>
   </div>
 </section>
@@ -97,47 +98,34 @@
 
 <section>
   <div class="wrap">
-    <h2>Early access, honestly</h2>
-    <p class="lead">You're buying in at the start. Here's exactly what that means — what's in the repo today, and what lands over the coming days. Early-access backers lock in £49 with lifetime updates.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>In the repo today</h3>
-        <ul class="pricing-box-list" style="list-style:none;color:var(--muted)">
-          <li style="padding:5px 0">✓ Next.js 15 + TypeScript + Tailwind v4 base</li>
-          <li style="padding:5px 0">✓ Streaming chat API route (Claude, adaptive thinking)</li>
-          <li style="padding:5px 0">✓ Typed tool-handler framework (Zod)</li>
-          <li style="padding:5px 0">✓ Per-user usage metering + plan quotas</li>
-          <li style="padding:5px 0">✓ Cache-correct prompt architecture</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Shipping this week</h3>
-        <ul class="roadmap" style="list-style:none;color:var(--muted)">
-          <li style="padding:5px 0">→ Auth (OAuth + magic links)</li>
-          <li style="padding:5px 0">→ Stripe subscriptions + webhooks + plan gating</li>
-          <li style="padding:5px 0">→ Postgres + Drizzle schema & migrations</li>
-          <li style="padding:5px 0">→ Transactional email templates</li>
-          <li style="padding:5px 0">→ Dashboard + chat UI components, full docs</li>
-        </ul>
-      </div>
-    </div>
+    <h2>Your SaaS is also an MCP server</h2>
+    <p class="lead">Every AgentShip app ships with a JSON-RPC endpoint at <code>/api/mcp</code>. AI agents — Claude, Cursor, anything MCP-compatible — can call your SaaS actions directly. Add tools in <code>src/lib/mcp/server.ts</code>.</p>
+<pre><span class="cm">// src/lib/mcp/server.ts — add a tool, it's live immediately</span>
+<span class="kw">const</span> tools: MCPTool[] = [
+  {
+    name: <span class="str">"get_user_data"</span>,
+    description: <span class="str">"Retrieve data for the authenticated user."</span>,
+    inputSchema: { type: <span class="str">"object"</span>, properties: { field: { type: <span class="str">"string"</span> } } },
+    handler: <span class="kw">async</span> ({ field }, userId) => db.<span class="fn">findForUser</span>(userId, field),
+  },
+];</pre>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="pricing-box">
-      <div class="badge">EARLY ACCESS</div>
-      <div class="amount"><s>£99</s>£49</div>
+      <div class="badge">v1.0 RELEASE</div>
+      <div class="amount">£99</div>
       <p style="color:var(--muted)">one-time payment</p>
       <ul>
         <li>Full private repo access (read + clone)</li>
-        <li>Lifetime updates — including v1.0 and beyond</li>
+        <li>Lifetime updates — all future modules</li>
         <li>Use in unlimited commercial projects</li>
-        <li>Price locked before it rises at v1.0</li>
+        <li>Setup guide + inline code docs</li>
       </ul>
-      <a class="btn" href="https://buy.stripe.com/7sYcMYf6me2X3VnaK2f3a0c" style="width:100%">Get AgentShip — £49</a>
-      <p class="price-note">Secure checkout by Stripe · repo invite sent to your GitHub username</p>
+      <a class="btn" href="https://buy.stripe.com/5kQ28k2jA0c7eA1bO6f3a0d" style="width:100%">Buy AgentShip — £99</a>
+      <p class="price-note">Secure checkout by Stripe · GitHub repo invite sent within minutes</p>
     </div>
   </div>
 </section>
@@ -147,14 +135,32 @@
     <h2>FAQ</h2>
     <details><summary>How is the code delivered?</summary><p>At checkout you enter your GitHub username. You'll be invited as a collaborator to the private AgentShip repository — clone it, build on it, and pull updates as they land. Invites are sent within 24 hours, usually much faster.</p></details>
     <details><summary>What's the license?</summary><p>One license per developer. Build and sell unlimited commercial products with it. The only thing you can't do is resell or redistribute the boilerplate itself.</p></details>
-    <details><summary>Why is it cheaper than ShipFast and the others?</summary><p>It's early access — the AI core is done and the remaining SaaS modules land over the coming days. Early backers get the low price plus lifetime updates. The price rises to £99 at v1.0.</p></details>
-    <details><summary>Which AI provider does it use?</summary><p>The Claude API (Anthropic), using current model IDs and the official TypeScript SDK — adaptive thinking, streaming, tool runner, prompt caching. The architecture isolates the provider in one module if you want to adapt it.</p></details>
+    <details><summary>What do I need to run it?</summary><p>Node.js 20+, a Neon Postgres database (free tier works), a Stripe account, an Anthropic API key, and a GitHub or Google OAuth app. The setup guide walks through each in under 15 minutes.</p></details>
+    <details><summary>Which AI provider does it use?</summary><p>The Claude API (Anthropic), using current model IDs and the official TypeScript SDK — adaptive thinking, streaming, tool runner, prompt caching. The architecture isolates the provider in one module if you want to swap it.</p></details>
+    <details><summary>What is an MCP server?</summary><p>The Model Context Protocol lets AI agents (Claude, Cursor, etc.) call your app's functions directly. AgentShip ships your app as an MCP server out of the box — AI tools can query your database, trigger workflows, or return live data as part of a conversation.</p></details>
     <details><summary>Refunds?</summary><p>If the repo isn't what you expected, reply to your receipt within 14 days for a full refund. No forms, no fuss.</p></details>
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <h2>How AgentShip compares</h2>
+    <p class="lead">There are other boilerplates. Here's the honest difference.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>vs ShipFast / Makerkit</h3>
+        <p style="color:var(--muted)">Great general SaaS starters. Neither ships with agentic AI, MCP, or usage metering out of the box — those are the modules you'd build yourself. AgentShip starts where they end.</p>
+      </div>
+      <div class="card">
+        <h3>vs OpenAI boilerplates</h3>
+        <p style="color:var(--muted)">Built around the Claude API: adaptive thinking, tool runner, prompt caching. The architecture also works with OpenAI if you swap the provider module, but it's designed to get the most from Claude.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="wrap">AgentShip · Built with the Claude API · <a href="https://buy.stripe.com/7sYcMYf6me2X3VnaK2f3a0c">Get early access</a></div>
+  <div class="wrap">AgentShip · Built with the Claude API · <a href="https://buy.stripe.com/5kQ28k2jA0c7eA1bO6f3a0d">Buy now — £99</a></div>
 </footer>
 </body>
 </html>
